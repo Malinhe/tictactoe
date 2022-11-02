@@ -4,10 +4,14 @@ let fields = [];
 let currentShape = 'cross';
 
 function fillShape(id) {                //id steht für den Funktionsparameter 0-8, den wir in der index.html der Funktion geben
-    if(currentShape == 'cross') {       //wenn gerade "cross" ist, dann ändern wir es zu "circle"
-        currentShape = 'circle';
+    if(currentShape == 'cross') {       //wenn gerade "cross" ist, DANN 
+        currentShape = 'circle';                     //ändern wir es zu "circle" und
+        document.getElementById('player-1').classList.remove('player-inactive');    //entfernen die Klasse "player-inactive" und
+        document.getElementById('player-2').classList.add('player-inactive');       //fügen sie dem anderen hinzu, somit ist jederzeit der aktuelle Spieler sichtbar
     }else {
         currentShape = 'cross';          //ansonsten haben wir gerade einen "circle" und ändern diesen zu "cross"
+        document.getElementById('player-1').classList.add('player-inactive');
+        document.getElementById('player-2').classList.remove('player-inactive');
     }
                                         
     fields[id] = currentShape;           //das Array fields an der Stelle id(0-8) ist zB "cross"
