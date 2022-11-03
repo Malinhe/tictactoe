@@ -92,10 +92,15 @@ table tr td:last-child {
   }
 
 
+  .game-container {
+    position: relative;
+  }
+
+
   .horizontal_line {
     height: 10px;
     background-color: rgba(0, 0, 0, 0.5);
-    width: 400px;
+    width: 415px;
     position: absolute;
     transform: scaleX(0.0);
     transition: transform 225ms ease-in-out;
@@ -111,7 +116,7 @@ table tr td:last-child {
   .diagonal-line {
     height: 10px;
     background-color: rgba(0, 0, 0, 0.5);
-    width: 525px;
+    width: 430px;
     position: absolute;
     z-index: 1;
   }
