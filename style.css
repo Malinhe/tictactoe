@@ -99,6 +99,7 @@ table tr td:last-child {
     position: absolute;
     transform: scaleX(0.0);
     transition: transform 225ms ease-in-out;
+    z-index: 1;
   }
 
 
@@ -112,4 +113,28 @@ table tr td:last-child {
     background-color: rgba(0, 0, 0, 0.5);
     width: 525px;
     position: absolute;
+    z-index: 1;
+  }
+
+
+  .game-over {
+    position: absolute;
+    left: 0;
+    right: 0;
+    /* opacity: 0.7; */
+    width: 100%;
+    z-index: 2;
+    animation: zoomIn 225ms ease-in-out;
+  }
+
+  @keyframes zoomIn {
+    from{
+        opacity: 0;
+        transform: scale(0);
+    }
+
+    to{
+        transform: scale(1);
+        opacity: 1;
+    }
   }

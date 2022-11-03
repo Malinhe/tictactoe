@@ -1,10 +1,11 @@
 let fields = [];
-
-
+let gameOver = false; //standartmäßig false
 let currentShape = 'cross';
+let SOUND_GAMOVER = new Audio('./sounds/game-over.mp3');
 
 function fillShape(id) {    //id steht für den Funktionsparameter 0-8, den wir in der index.html der Funktion geben
-    if (!fields[id]) {      //Erklärung siehe Screenshot
+    if (!fields[id] && !gameOver) {      //Erklärung siehe Screenshot für !fields[id]
+                                        //!gameOver wird mit ! umgekehrt zu true, also solange das Feld gefüllt ist UND gameOver true wird das Spiel fortgesetzt
 
         if (currentShape == 'cross') {       //wenn gerade "cross" ist, DANN 
             currentShape = 'circle';                     //ändern wir es zu "circle" und
@@ -86,5 +87,11 @@ function checkForWin() {
     if (winner) {
 
         console.log('GEWONNEN:', winner)
+        gameOver = true;    //das Spiel ist zuende also kann man keine weiteren Felder mehr anklicken
+
+        setTimeout(function() {
+        document.getElementById('gameOver').classList.remove('d-none');
+        SOUND_GAMOVER.play();
+    }, 500);
     }
 }
