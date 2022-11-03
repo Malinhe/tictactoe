@@ -50,7 +50,7 @@ function checkForWin() {
         winner = fields[3];
     }
 
-    if (fields[6] == fields[7] && fields[7] == fields[8] && fields[6]) { //der letzte Teil der If-Abfrage, prüft ob da wirklich kein undefined drin steht.
+    if (fields[6] == fields[7] && fields[7] == fields[8] && fields[6]) { //der letzte Teil der If-Abfrage, prüft ob da ein Wert drin steht oder nicht.
         winner = fields[6];
     }
 
