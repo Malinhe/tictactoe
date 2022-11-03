@@ -25,6 +25,23 @@ function fillShape(id) {    //id steht für den Funktionsparameter 0-8, den wir 
 }
 
 
+function restartGame() {
+    gameOver = false;
+    fields = [];
+    document.getElementById('restartBtn').classList.add('d-none');
+    document.getElementById('gameOver').classList.add('d-none');
+
+    for(let i = 1; i < 8; i++) {
+       document.getElementById(`line-${i}`).classList.add('d-none'); 
+    }
+
+    for(let i = 0; i < 9; i++) {
+        document.getElementById(`circle-${i}`).classList.add('d-none');
+        document.getElementById(`cross-${i}`).classList.add('d-none');
+    }
+}
+
+
 //Spieler wechseln
 function draw() {
     for (let i = 0; i < fields.length; i++) {
@@ -96,4 +113,3 @@ function checkForWin() {
     }, 1000);
     }
 }
-
