@@ -90,8 +90,10 @@ function checkForWin() {
         gameOver = true;    //das Spiel ist zuende also kann man keine weiteren Felder mehr anklicken
 
         setTimeout(function() {
+        document.getElementById('restartBtn').classList.remove('d-none');
         document.getElementById('gameOver').classList.remove('d-none');
         SOUND_GAMOVER.play();
-    }, 500);
+    }, 1000);
     }
 }
+
